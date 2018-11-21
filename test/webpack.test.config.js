@@ -1,7 +1,8 @@
-const nodeExternals = require('webpack-node-externals')
-const webpack = require('webpack')
-const browser = process.env.TARGET === 'browser'
-const path = require('path')
+const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack');
+const browser = process.env.TARGET === 'browser';
+const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader');
 
 const projectRoot = path.resolve(__dirname, '../')
 
@@ -36,5 +37,5 @@ module.exports = {
         fs: 'empty',
         module: 'empty'
     },
-    plugins: [new webpack.EnvironmentPlugin(['TEST_ENV'])]
+    plugins: [new webpack.EnvironmentPlugin(['TEST_ENV']), new VueLoaderPlugin()]
 }

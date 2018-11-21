@@ -27,6 +27,10 @@ describe("Time class Unit Test", () => {
             expect(Time.isValidFormat("20:60", TimeInterface.FORMAT_24))
                 .to.be.false
             ;
+
+            expect(Time.isValidFormat("12:00 am", TimeInterface.FORMAT_24))
+                .to.be.false
+            ;
         });
 
         it("Return True with valid time format", () => {

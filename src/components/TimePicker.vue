@@ -12,7 +12,7 @@ export default {
     },
     computed: {
         sanitizeValue() {
-            return Time.regex(this.value)?this.value:'';
+            return Time.isValidFormat(this.value)?this.value:'';
         }
     },
     // data() {
