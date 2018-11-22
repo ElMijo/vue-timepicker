@@ -11,7 +11,7 @@
         "e2e:open": "vue-cli-service e2e:open",
         "lint": "vue-cli-service lint",
         "test:unit": "TEST_ENV=node nyc --reporter=lcov --reporter=text mocha-webpack --webpack-config test/webpack.test.config.js test/unit/*.spec.js --recursive --require test/mocha.setup.js",
-        "test:integration": "TEST_ENV=browser nyc --reporter=lcov --reporter=text mocha-webpack --webpack-config test/webpack.test.config.js test/integration/*.spec.js --recursive --require test/mocha.setup.js"
+        "test:integration": "TEST_ENV=browser nyc --reporter=lcov --reporter=text mocha-webpack --webpack-config test/webpack.test.config.js test/**/*.spec.js --recursive --require test/mocha.setup.js"
 
     },
     "dependencies": {

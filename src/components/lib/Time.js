@@ -46,4 +46,19 @@ export class Time extends TimeInterface
 
         return format(type).test(val)
     }
+
+    parseTime(val) {
+        let time, abbr;
+        if (this.isValidFormat(val, TimeInterface.FORMAT_12)) {
+            [ time, abbr ] = val.split(' ');
+        } else if (this.isValidFormat(val)) {
+            time = val;
+        }
+
+        if (time === undefined) {
+            throw new Error(`Invalid time format [${val}]`);
+        }
+
+        return time.replace(':', '').split('').concat(abbr?[abbr.toUpperCase()]:[]);
+    }
 }
