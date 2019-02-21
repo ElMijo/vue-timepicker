@@ -35,24 +35,24 @@ describe("Time class Unit Test", () => {
         it("Parse success with format 12 hours", () => {
             expect(Time.parseTime('01:45 AM'))
                 .to.be.an('array')
-                .to.deep.equal(['0', '1', '4', '5', 'AM'])
+                .to.deep.equal([0, 1, 4, 5, 'AM'])
             ;
 
             expect(Time.parseTime('10:45 pm'))
                 .to.be.an('array')
-                .to.deep.equal(['1', '0', '4', '5', 'PM'])
+                .to.deep.equal([1, 0, 4, 5, 'PM'])
             ;
         });
 
         it("Parse success with format 24 hours", () => {
             expect(Time.parseTime('01:45'))
                 .to.be.an('array')
-                .to.deep.equal(['0', '1', '4', '5'])
+                .to.deep.equal([0, 1, 4, 5])
             ;
 
             expect(Time.parseTime('17:45'))
                 .to.be.an('array')
-                .to.deep.equal(['1', '7', '4', '5'])
+                .to.deep.equal([1, 7, 4, 5])
             ;
         });
     });

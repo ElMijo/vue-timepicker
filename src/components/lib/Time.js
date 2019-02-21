@@ -59,6 +59,6 @@ export class Time extends TimeInterface
             throw new Error(`Invalid time format [${val}]`);
         }
 
-        return time.replace(':', '').split('').concat(abbr?[abbr.toUpperCase()]:[]);
+        return time.replace(':', '').split('').map(val => parseInt(val)).concat(abbr?[abbr.toUpperCase()]:[]);
     }
 }
